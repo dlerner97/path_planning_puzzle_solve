@@ -4,15 +4,15 @@ import queue
 import operator
 import numpy as np
 from time import time 
-from os import system
+from datetime import datetime
 
 #<========================= Puzzle Class Definition =========================>#
 class Puzzle:
 
     # One can pass in an explicit grid as a list of lists (or matrix) OR a grid size. Second option will randomly generate grid.
-    def __init__(self, size_grid=None, grid=None) -> None:
+    def __init__(self, size_grid=None, grid=None, test_type='') -> None:
         
-        self.file_name = 'nodePath.txt'
+        self.file_name = 'nodePath_'+ test_type + '.txt'
 
         # If explicit grid is given...  
         if grid is not None:
@@ -190,14 +190,14 @@ def run_case(case, overwrite=False, custom=None):
 
     # Custom puzzle
     if custom != None:
-        puzzle = Puzzle(grid=custom)                                                            # This method takes in a puzzle directly and solves
+        puzzle = Puzzle(grid=custom, test_type='custom')                                                            # This method takes in a puzzle directly and solves
         print("--------------------------- Custom Case ---------------------------")
         puzzle.write_str_to_file("--------------------------- Custom Case ---------------------------", overwrite=overwrite)
 
     # Random Puzzle
     elif len(case) > 1:
         case = case[-1]
-        puzzle = Puzzle(size_grid=int(case))                                                     # This method takes in a puzzle size and randomly generates a puzzle
+        puzzle = Puzzle(size_grid=int(case), test_type='random')                                                     # This method takes in a puzzle size and randomly generates a puzzle
         print("--------------------------- Random Case "+case+"x"+case+" ---------------------------")
         puzzle.write_str_to_file("--------------------------- Random Case "+case+"x"+case+" ---------------------------", overwrite=overwrite)
 
@@ -209,7 +209,7 @@ def run_case(case, overwrite=False, custom=None):
                         '4': [[5, 1, 2, 3],[ 0, 6, 7, 4], [9, 10, 11, 8], [13, 14, 15, 12]],
                         '5': [[1, 6, 2, 3],[ 9, 5, 7, 4], [0, 10, 11, 8], [13, 14, 15, 12]]}
 
-        puzzle = Puzzle(grid=test_case[case])                                                     
+        puzzle = Puzzle(grid=test_case[case], test_type='test_cases')                                                     
         print("\n--------------------------- Test Case "+case+" ---------------------------")
         puzzle.write_str_to_file("--------------------------- Test Case "+case+" ---------------------------", overwrite=overwrite)
     

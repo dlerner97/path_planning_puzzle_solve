@@ -10,7 +10,7 @@
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 0
 
 This puzzle can be solved in 3 operations
-The algorithm took 0.0 hrs, 0.0 mins, and 0.003989219665527344 s to implement
+The algorithm took 0.0 hrs, 0.0 mins, and 0.005932331085205078 s to implement
 
 
 --------------------------- Test Case 2 ---------------------------
@@ -27,7 +27,7 @@ The algorithm took 0.0 hrs, 0.0 mins, and 0.003989219665527344 s to implement
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 0
 
 This puzzle can be solved in 5 operations
-The algorithm took 0.0 hrs, 0.0 mins, and 0.004986286163330078 s to implement
+The algorithm took 0.0 hrs, 0.0 mins, and 0.00498652458190918 s to implement
 
 
 --------------------------- Test Case 3 ---------------------------
@@ -45,7 +45,7 @@ The algorithm took 0.0 hrs, 0.0 mins, and 0.004986286163330078 s to implement
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 0
 
 This puzzle can be solved in 6 operations
-The algorithm took 0.0 hrs, 0.0 mins, and 0.005974292755126953 s to implement
+The algorithm took 0.0 hrs, 0.0 mins, and 0.004986763000488281 s to implement
 
 
 --------------------------- Test Case 4 ---------------------------
@@ -64,7 +64,7 @@ The algorithm took 0.0 hrs, 0.0 mins, and 0.005974292755126953 s to implement
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 0
 
 This puzzle can be solved in 7 operations
-The algorithm took 0.0 hrs, 0.0 mins, and 0.00897526741027832 s to implement
+The algorithm took 0.0 hrs, 0.0 mins, and 0.008964061737060547 s to implement
 
 
 --------------------------- Test Case 5 ---------------------------
@@ -84,6 +84,6 @@ The algorithm took 0.0 hrs, 0.0 mins, and 0.00897526741027832 s to implement
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 0
 
 This puzzle can be solved in 8 operations
-The algorithm took 0.0 hrs, 0.0 mins, and 0.012965917587280273 s to implement
+The algorithm took 0.0 hrs, 0.0 mins, and 0.0129547119140625 s to implement
 
 
