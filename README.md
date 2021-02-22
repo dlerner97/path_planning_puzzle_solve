@@ -1,3 +1,14 @@
+Libraries 
+
+import sys
+import queue
+import operator
+import numpy as np
+from time import time 
+from os import system
+
+All libraries should be standard python libraries. No pip3 install statements were used to generate the code
+
 To run the code, change the directory to proj1_dani_lerner folder. i.e.
 
     cd your_path/proj1_dani_lerner
@@ -33,6 +44,6 @@ The 5 test cases are shown below:
                          '3': [[0, 2, 3, 4],[ 1, 5, 7, 8], [9, 6, 11, 12], [13, 10, 14, 15]],
                          '4': [[5, 1, 2, 3],[ 0, 6, 7, 4], [9, 10, 11, 8], [13, 14, 15, 12]],
                          '5': [[1, 6, 2, 3],[ 9, 5, 7, 4], [0, 10, 11, 8], [13, 14, 15, 12]]}
-                         
+
 
 
