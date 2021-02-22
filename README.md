@@ -34,7 +34,7 @@ Last but not least, having any word between main.py and the number will generate
 
 ... will generate a random 4x4 sequence and run the algorithm on it.
 
-In all the above cases, the nodePath.txt file can be found in the current directory. Please note that the text file
+In all the above cases, the nodePath_case_type.txt file can be found in the current directory. Please note that the text file
 will overwrite each time the code is run.
 
 The 5 test cases are shown below:
