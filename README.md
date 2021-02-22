@@ -3,13 +3,9 @@ Libraries
 import sys
 
 import queue
-
 import operator
-
 import numpy as np
-
 from time import time 
-
 from os import system
 
 All libraries should be standard python libraries. No pip3 install statements were used to generate the code
