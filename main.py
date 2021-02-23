@@ -3,6 +3,7 @@ import sys
 import queue
 import operator
 import numpy as np
+from os import system
 from time import time 
 from datetime import datetime
 
@@ -184,8 +185,7 @@ class Puzzle:
             print("Keyboard Interrupt")
 
 # Runs algorithm and prints results to terminal and screen   
-def run_case(case, overwrite=False, custom=None):
-    start_time = time()                                                                         # Time the algorithm
+def run_case(case, overwrite=False, custom=None, disp_file=True):
     puzzle = None
 
     # Custom puzzle
@@ -204,10 +204,10 @@ def run_case(case, overwrite=False, custom=None):
     # Pre-determined test cases
     else:
         test_case = {'1': [[1, 2, 3, 4],[ 5, 6, 0, 8], [9, 10, 7, 12], [13, 14, 11, 15]],
-                        '2': [[1, 0, 3, 4],[ 5, 2, 7, 8], [9, 6, 10, 11], [13, 14, 15, 12]],
-                        '3': [[0, 2, 3, 4],[ 1, 5, 7, 8], [9, 6, 11, 12], [13, 10, 14, 15]],
-                        '4': [[5, 1, 2, 3],[ 0, 6, 7, 4], [9, 10, 11, 8], [13, 14, 15, 12]],
-                        '5': [[1, 6, 2, 3],[ 9, 5, 7, 4], [0, 10, 11, 8], [13, 14, 15, 12]]}
+                     '2': [[1, 0, 3, 4],[ 5, 2, 7, 8], [9, 6, 10, 11], [13, 14, 15, 12]],
+                     '3': [[0, 2, 3, 4],[ 1, 5, 7, 8], [9, 6, 11, 12], [13, 10, 14, 15]],
+                     '4': [[5, 1, 2, 3],[ 0, 6, 7, 4], [9, 10, 11, 8], [13, 14, 15, 12]],
+                     '5': [[1, 6, 2, 3],[ 9, 5, 7, 4], [0, 10, 11, 8], [13, 14, 15, 12]]}
 
         puzzle = Puzzle(grid=test_case[case], test_type='test_cases')                                                     
         print("\n--------------------------- Test Case "+case+" ---------------------------")
@@ -215,6 +215,8 @@ def run_case(case, overwrite=False, custom=None):
     
     puzzle.print()
     print("")
+
+    start_time = time()                                                                         # Time the BFS algorithm
 
     # Run Algorithm
     puzzle.find_path()                                                                          
@@ -240,8 +242,11 @@ def run_case(case, overwrite=False, custom=None):
         print("No solutions to current puzzle. Please select another puzzle.")
         puzzle.write_str_to_file("No solutions to current puzzle. Please select another puzzle.")
 
-    puzzle.write_str_to_file(f"The algorithm took {time_elapsed_hrs} hrs, {time_elapsed_mins} mins, and {time_elapsed_secs} s to implement", end='\n\n\n')
-    print(f"The algorithm took {time_elapsed_hrs} hrs, {time_elapsed_mins} mins, and {time_elapsed_secs} s to implement")
+    puzzle.write_str_to_file(f"The BFS algorithm took {time_elapsed_hrs} hrs, {time_elapsed_mins} mins, and {time_elapsed_secs} s to implement", end='\n\n\n')
+    print(f"The BFS algorithm took {time_elapsed_hrs} hrs, {time_elapsed_mins} mins, and {time_elapsed_secs} s to implement")
+
+    if disp_file:
+        system(puzzle.file_name)
 
 #<========================= Main =========================>#
 if __name__ == '__main__':
@@ -252,17 +257,18 @@ if __name__ == '__main__':
     # Run all 5 given cases
     if len(sys.argv) == 1:
         overwrite = True
-        for case in range(1,6):
+        for case in range(1,5):
             if overwrite:
-                run_case(str(case), overwrite=overwrite)
+                run_case(str(case), overwrite=True, disp_file=False)
                 overwrite = False
             else:
-                run_case(str(case))
+                run_case(str(case), disp_file=False)
+        run_case('5')
 
     # Run custom grid
     elif sys.argv[1] == 'custom':
         custom_list = [[1, 2, 3, 4],[ 5, 6, 0, 8], [9, 10, 7, 12], [13, 14, 11, 15]]
-        run_case(None, custom=custom_list)
+        run_case(None, custom=custom_list, overwrite=True)
 
     # Run individual case
     elif len(sys.argv) == 2:
@@ -273,12 +279,3 @@ if __name__ == '__main__':
     elif len(sys.argv) == 3:
         case = sys.argv[1] + sys.argv[2]
         run_case(case, overwrite=True)
-
-    
-
-
-
-
-
-
-

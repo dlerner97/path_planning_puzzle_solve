@@ -10,6 +10,6 @@
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 0
 
 This puzzle can be solved in 3 operations
-The algorithm took 0.0 hrs, 0.0 mins, and 0.004986286163330078 s to implement
+The BFS algorithm took 0.0 hrs, 0.0 mins, and 0.0009663105010986328 s to implement
 
 
